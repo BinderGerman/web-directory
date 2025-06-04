@@ -1,0 +1,40 @@
+---
+---
+<header class="py-6">
+  <nav class="flex items-center justify-between">
+    <div class="flex items-center">
+      <a href="/" class="font-display text-3xl font-bold text-primary-700">BeautyEdu</a>
+    </div>
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="/" class="text-content-base hover:text-primary-600 font-medium transition">Inicio</a>
+      <a href="/courses" class="text-content-base hover:text-primary-600 font-medium transition">Cursos</a>
+      <a href="/categories" class="text-content-base hover:text-primary-600 font-medium transition">Categorías</a>
+      <a href="/submit" class="text-content-base hover:text-primary-600 font-medium transition">Enviar Curso</a>
+      <a href="/about" class="text-content-base hover:text-primary-600 font-medium transition">Acerca de</a>
+    </div>
+    <div class="md:hidden flex items-center">
+      <button id="menuButton" class="text-content-base hover:text-primary-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden pt-4 pb-2 border-t border-line-light mt-4">
+    <a href="/" class="block py-2 text-content-base hover:text-primary-600 font-medium">Inicio</a>
+    <a href="/courses" class="block py-2 text-content-base hover:text-primary-600 font-medium">Cursos</a>
+    <a href="/categories" class="block py-2 text-content-base hover:text-primary-600 font-medium">Categorías</a>
+    <a href="/submit" class="block py-2 text-content-base hover:text-primary-600 font-medium">Enviar Curso</a>
+    <a href="/about" class="block py-2 text-content-base hover:text-primary-600 font-medium">Acerca de</a>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById('menuButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
