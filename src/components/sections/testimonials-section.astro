@@ -1,0 +1,28 @@
+---
+// Data
+import { testimonials } from "../../data/testimonials"
+
+// UI
+import TestimonialCard from "../cards/testimonial-card.astro"
+---
+<section class="mt-8 py-16 bg-gradient-to-r from-primary-50 to-secondary-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-content-subtle mb-4">Lo que dicen nuestras estudiantes</h2>
+      <p class="text-content-base max-w-3xl mx-auto">
+        Escuche a los profesionales de la belleza que han transformado sus carreras con nuestros cursos destacados.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial) => (
+        <TestimonialCard 
+          name={testimonial.name}
+          role={testimonial.role}
+          content={testimonial.content}
+          avatarUrl={testimonial.avatarUrl}
+        />
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  content: string;
+  avatarUrl: string;
+}
+
+const { name, role, content, avatarUrl } = Astro.props
+---
+<div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+  <div class="flex items-center mb-4">
+    <img 
+      src={avatarUrl} 
+      alt={`${name}'s avatar`}
+      class="w-12 h-12 rounded-full object-cover mr-4"
+    />
+    <div>
+      <h3 class="font-semibold text-content-subtle">{name}</h3>
+      <p class="text-sm text-primary-600">{role}</p>
+    </div>
+  </div>
+  <div class="relative">
+    <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-6 h-8 w-8 text-primary-200" fill="currentColor" viewBox="0 0 32 32">
+      <path d="M9.352 4C4.456 7.456 1.646 13.825 1.646 21.087H5.429c0-7.292 3.618-11.773 7.306-13.84h-3.384v9.142c0 3.792 3.068 6.869 6.869 6.869s6.869-3.068 6.869-6.869C23.089 9.942 17.189 4 9.352 4zM25.058 4c-4.896 3.456-7.706 9.825-7.706 17.087h3.784c0-7.292 3.618-11.773 7.306-13.84h-3.384v9.142c0 3.792 3.068 6.869 6.869 6.869s6.869-3.068 6.869-6.869C38.794 9.942 32.894 4 25.058 4z"/>
+    </svg>
+    <p class="text-content-base pl-5 italic">"{content}"</p>
+  </div>
+</div>

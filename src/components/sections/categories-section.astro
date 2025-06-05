@@ -1,0 +1,27 @@
+---
+// Data
+import { categories } from "../../data/categories"
+
+// UI
+import CategoryCard from "../cards/category-card.astro"
+---
+<section class="mt-8 py-12 px-8 bg-gradient-to-b from-white to-primary-50">
+  <div class="mb-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-display font-bold text-content-subtle mb-4">Explorar por Categorías</h2>
+    <p class="text-content-base max-w-3xl mx-auto">
+      Explora una amplia gama de categorías de cursos de belleza y estética.
+    </p>
+  </div>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {categories.map(category => (
+      <CategoryCard 
+        title={category.title}
+        icon={category.icon}
+        description={category.description}
+        count={category.count}
+        slug={category.slug}
+      />
+    ))}
+  </div>
+</section>
